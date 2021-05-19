@@ -1,0 +1,42 @@
+data;
+
+set processos P1 P2 P3;
+set taronjades lleugera extra super_extra;
+
+param temps_produccio:
+        lleugera extra super_extra:=
+P1      6       8	9
+P2      4       3	4
+P3      5       4	5;
+
+param benefici :=
+lleugera 6.5
+extra 8
+super_extra 10;
+
+param max_temps :=
+P1 350
+P2 300
+P3 320;
+
+param subprod :=
+lleugera 3
+extra 1.5
+super_extra 2;
+
+param benefici_subprod :=
+lleugera 0
+extra 1.5
+super_extra 0;
+
+param demanda_subprod :=
+lleugera 0
+extra 15
+super_extra 0;
+
+param cost_exces_subprod :=
+lleugera -0.25
+extra -0.75
+super_extra -0.6;
+
+end;

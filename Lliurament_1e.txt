@@ -1,0 +1,30 @@
+set processos;
+set taronjades;
+
+param temps_produccio{processos, taronjades};
+param benefici{taronjades};
+param max_temps{processos};
+param subprod{taronjades};
+param benefici_subprod{taronjades};
+param demanda_subprod{taronjades};
+param cost_exces_subprod{taronjades};
+param cost_empresa{processos};
+param hores_empresa{processos};
+
+var taronjada{taronjades} >= 0, integer;
+var subprod_venta{taronjades} >= 0, integer;
+var subprod_exces{taronjades} >= 0;
+var empresa_contractada{processos}, binary;
+
+maximize benefici_total: sum{j in taronjades} benefici[j] * taronjada[j]
++ sum{j in taronjades} benefici_subprod[j] * subprod_venta[j]
++ sum{j in taronjades} cost_exces_subprod[j] * subprod_exces[j]
++ sum{i in processos} cost_empresa[i] * empresa_contractada[i];
+
+subject to
+temps{i in processos}: sum{j in taronjades} taronjada[j] * temps_produccio[i,j] <=  empresa_contractada[i] * hores_empresa[i] + max_temps[i];
+
+max_demanda_subprod{j in taronjades}: subprod_venta[j] <= demanda_subprod[j];
+quantitat_subprod{j in taronjades}: subprod[j] * taronjada[j] = subprod_venta[j] + subprod_exces[j];
+
+end;
