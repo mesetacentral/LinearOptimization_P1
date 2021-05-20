@@ -1,0 +1,6 @@
+# ignore all texstudio files except pdf
+*.aux
+*.out
+*.log
+*.tex
+*.synctex.gz
