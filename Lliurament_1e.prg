@@ -3,8 +3,8 @@
 Maximize
  benefici_total: + 6.5 taronjada(lleugera) + 8 taronjada(extra)
  + 1.5 subprod_venta(extra) - 0.25 subprod_exces(lleugera)
- - 0.75 subprod_exces(extra) + 50 empresa_contractada(P1)
- + 40 empresa_contractada(P2) + 30 empresa_contractada(P3)
+ - 0.75 subprod_exces(extra) - 50 empresa_contractada(P1)
+ - 40 empresa_contractada(P2) - 30 empresa_contractada(P3)
 
 Subject To
  temps(P1): + 6 taronjada(lleugera) + 8 taronjada(extra)
